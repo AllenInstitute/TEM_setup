@@ -1,3 +1,5 @@
+sudo -E sh <<EOF
+
 # Update and Upgrade
 
 apt-get update
@@ -32,7 +34,7 @@ wget https://github.com/pulsar-edit/pulsar/releases/download/v1.120.0/Linux.puls
 
 # Install .deb files
 
-DEBIAN_NOINTERACTIVE=1 dpkg -i vscode.deb Linux.pusar_1.120.0_amd64.deb
+DEBIAN_NOINTERACTIVE=1 dpkg -i vscode.deb Linux.pulsar_1.120.0_amd64.deb
 
 # Download other software
 
@@ -42,6 +44,20 @@ wget https://www.ximea.com/downloads/recent/XIMEA_Linux_SP.tgz
 
 tar -xzf XIMEA_Linux_SP.tgz
 sh -c "cd package; ./install -pcie"
+
+# Configure
+
+cp TEM_setup/config/docker/daemon.json /etc/docker/
+
+EOF
+
+# Install PIP
+
+wget -O- https://bootstrap.pypa.io/get-pip.py | python
+
+# Install Python Packages
+
+pip install pigeon-config
 
 # Install Extensions
 
@@ -60,16 +76,22 @@ twxs.cmake" | sed 's/^/--install-extension /' | xargs code
 ppm install atom-material-syntax atom-material-syntax-light atom-material-ui auto-detect-indentation \
     autocomplete-python build build-make busy-signal language-cmake minimap
 
-# Configure
+# Configure Extensions
 
-cp config/docker/daemon.json /etc/docker/
-cp config/ssh/* ~/.ssh/
-cp config/pulsar/config.cson ~/.pulsar/
+cp TEM_setup/config/pulsar/config.cson ~/.pulsar/
 
-# Repositories
+# Create SSH key
+
+ssh-keygen -f $HOME/.ssh/id_rsa -P ""
+echo "Please add the following SSH key to your GitHub account."
+echo "https://github.com/settings/ssh/new"
+cat $HOME/.ssh/id_rsa.pub
+read -p "Press enter when complete."
+
+# Download Repositories
 
 git clone git@github.com:AllenInstitute/TEM_config.git ~/Documents/TEM_config
 
 # Reboot
 
-shutdown -r now
+reboot

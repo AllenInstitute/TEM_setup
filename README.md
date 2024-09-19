@@ -35,4 +35,4 @@ The following partitions should be created:
 In a terminal run:
 
 ```bash
-wget https://raw.githubusercontent.com... | sudo sh
+wget -O- https://raw.githubusercontent.com/AllenInstitute/TEM_setup/refs/heads/master/bootstrap.sh | sh
