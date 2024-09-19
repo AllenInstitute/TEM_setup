@@ -1,0 +1,13 @@
+"*":
+  "autocomplete-python":
+    useKite: false
+  core:
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax-light"
+    ]
+  editor:
+    softWrap: true
+  welcome:
+    lastViewedChangeLog: "1.117.0"
+    showOnStartup: false
