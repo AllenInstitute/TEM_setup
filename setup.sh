@@ -25,7 +25,7 @@ curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-contai
 # Update and Install
 
 apt-get update
-apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin nvidia-container-toolkit nvidia-driver-550-open
+apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin nvidia-container-toolkit nvidia-driver-550-open python-is-python3
 
 # Download .deb files
 
@@ -34,7 +34,9 @@ wget https://github.com/pulsar-edit/pulsar/releases/download/v1.120.0/Linux.puls
 
 # Install .deb files
 
-DEBIAN_NOINTERACTIVE=1 dpkg -i vscode.deb Linux.pulsar_1.120.0_amd64.deb
+echo "code code/add-microsoft-repo boolean true" | debconf-set-selections
+
+dpkg -i vscode.deb Linux.pulsar_1.120.0_amd64.deb
 
 # Download other software
 
