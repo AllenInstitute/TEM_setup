@@ -65,7 +65,6 @@ echo "ms-azuretools.vscode-docker
 ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance
-ms-vscode.atom-keybindings
 ms-vscode.cmake-tools
 ms-vscode.cpptools
 ms-vscode.cpptools-extension-pack
