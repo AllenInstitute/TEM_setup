@@ -82,9 +82,10 @@ cp TEM_setup/config/pulsar/config.cson ~/.pulsar/
 # Create SSH key
 
 ssh-keygen -f $HOME/.ssh/id_rsa -P ""
-echo "Please add the following SSH key to your GitHub account."
-echo "https://github.com/settings/ssh/new"
+echo "Please add the following SSH key to your GitHub account (https://github.com/settings/ssh/new):"
+echo
 cat $HOME/.ssh/id_rsa.pub
+echo
 read -p "Press enter when complete." KEY
 
 # Download Repositories
