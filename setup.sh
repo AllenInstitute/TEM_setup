@@ -94,4 +94,5 @@ git clone git@github.com:AllenInstitute/TEM_config.git ~/Documents/TEM_config
 
 # Reboot
 
+read -p "Press enter to reboot." KEY
 reboot
