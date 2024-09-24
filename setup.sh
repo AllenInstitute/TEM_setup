@@ -85,7 +85,7 @@ ssh-keygen -f $HOME/.ssh/id_rsa -P ""
 echo "Please add the following SSH key to your GitHub account."
 echo "https://github.com/settings/ssh/new"
 cat $HOME/.ssh/id_rsa.pub
-read -p "Press enter when complete."
+read -p "Press enter when complete." KEY
 
 # Download Repositories
 
