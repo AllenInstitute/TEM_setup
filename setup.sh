@@ -56,6 +56,7 @@ EOF
 # Install PIP
 
 wget -O- https://bootstrap.pypa.io/get-pip.py | python
+source ~/.profile
 
 # Install Python Packages
 
