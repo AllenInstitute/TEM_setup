@@ -82,6 +82,13 @@ ppm install atom-material-syntax atom-material-syntax-light atom-material-ui aut
 
 cp TEM_setup/config/pulsar/config.cson ~/.pulsar/
 
+# Install Zellij
+
+wget -O zellij.tar.gz https://github.com/zellij-org/zellij/releases/latest/download/zellij-x86_64-unknown-linux-musl.tar.gz
+tar -xzf zellij.tar.gz
+mkdir -p ~/bin
+mv zellij ~/bin/
+
 # Create SSH key
 
 ssh-keygen -f $HOME/.ssh/id_rsa -P ""
