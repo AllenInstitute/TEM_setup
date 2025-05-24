@@ -49,7 +49,6 @@ sh -c "cd package; ./install -pcie"
 
 # Configure
 
-cp TEM_setup/config/docker/daemon.json /etc/docker/
 cp TEM_setup/config/udev/* /etc/udev/rules.d/
 
 EOF
