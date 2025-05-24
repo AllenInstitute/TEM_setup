@@ -60,7 +60,7 @@ source ~/.profile
 
 # Install Python Packages
 
-pip install pigeon-config
+pip install pigeon-config pigeon-client pigeon-tem-comms
 
 # Install Extensions
 
