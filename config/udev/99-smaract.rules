@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTR{idProduct}=="6001", ATTR{manufacturer}=="SmarAct", RUN{program}+="/usr/bin/sh -c \"/usr/bin/echo -n %k:1.0 > /sys/bus/usb/drivers/ftdi_sio/unbind\""
