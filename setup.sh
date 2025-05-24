@@ -1,4 +1,4 @@
-sudo -E sh <<EOF
+sudo -E bash <<EOF
 
 # Update and Upgrade
 
